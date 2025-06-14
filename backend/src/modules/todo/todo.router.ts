@@ -5,6 +5,7 @@ import { validateDeleteTodo, validateTodo, validateUpdateTodo } from "./todo.val
 const todoRouter = Router();
 
 todoRouter.get("/", todoController.getAllTodos);
+todoRouter.get("/:id", todoController.getTodo);
 todoRouter.post("/", validateTodo, todoController.createTodo)
 todoRouter.put("/", validateUpdateTodo, todoController.updateTodo)
 todoRouter.delete("/", validateDeleteTodo, todoController.deleteTodo)

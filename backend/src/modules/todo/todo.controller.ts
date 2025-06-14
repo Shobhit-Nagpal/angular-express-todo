@@ -19,6 +19,29 @@ class TodoController {
       });
     }
   }
+
+  async getTodo(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+
+      const todoId = parseInt(id);
+
+      const data = await todoService.getTodo(todoId);
+      res.json({
+        success: true,
+        message: "Fetched todo!",
+        data,
+      });
+    } catch (err) {
+      console.error(err);
+      res.json({
+        success: false,
+        message: err instanceof Error ? err.message : "Error",
+        data: null,
+      });
+    }
+  }
+
   async createTodo(req: Request, res: Response) {
     try {
       const { title } = req.body;

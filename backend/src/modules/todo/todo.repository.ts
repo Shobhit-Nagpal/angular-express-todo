@@ -16,7 +16,7 @@ class TodoRepository {
   }
 
   async getTodo(id: number): Promise<Todo | null> {
-    const result = await db.query("SELECT * FROM todos WHERE $id=$1", [id]);
+    const result = await db.query("SELECT * FROM todos WHERE id=$1", [id]);
     if (result.rows.length === 0) {
       return null;
     }
