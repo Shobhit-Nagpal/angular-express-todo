@@ -1,0 +1,20 @@
+<main>
+  <div class='my-6'>
+    <todo-form
+      (createTodoEvent)="onCreate($event)"
+    />
+  </div>
+
+  @if (loading) {
+    <p>Loading...</p>
+  } @else {
+    <div class='flex flex-col items-center justify-center gap-2'>
+      @for (todo of todos ; track todo.id) {
+        <todo [todo]="todo"
+          (updateTodoEvent)="onEdit($event)"
+          (deleteTodoEvent)="onDelete($event)"
+        />
+      }
+    </div>
+  }
+</main>

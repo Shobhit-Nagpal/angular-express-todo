@@ -1,0 +1,15 @@
+<main>
+  <form [formGroup]="todoForm" (ngSubmit)="handleSubmit()">
+    <label for="title">
+      Title:
+      <input
+        type="text"
+        id="title"
+        formControlName="title"
+        class="border border-blue-600"
+      />
+    </label>
+
+    <button type="submit" [disabled]="!todoForm.valid">Add</button>
+  </form>
+</main>

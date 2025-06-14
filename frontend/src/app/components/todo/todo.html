@@ -1,0 +1,26 @@
+<main>
+  <div class="border-2 border-black">
+    @if (isEditing) {
+    <label for="title">
+      <input
+        type="text"
+        id="title"
+        [value]="todoTitle"
+        [(ngModel)]="todoTitle"
+        class="border border-blue-600"
+      />
+    </label>
+    } @else {
+    <h2 class="font-bold text-xl">{{ todo().title }}</h2>
+    }
+    <p>{{ todo().isDone ? 'Done' : 'Pending' }}</p>
+    <div class="flex items-center justify-center gap-4">
+      @if (isEditing) {
+      <button (click)="handleUpdate()">Save</button>
+      } @else {
+      <button (click)="handleEdit()">Edit</button>
+      }
+      <button (click)="handleDelete()">Delete</button>
+    </div>
+  </div>
+</main>
