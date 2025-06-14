@@ -12,7 +12,7 @@ class TodoController {
       });
     } catch (err) {
       console.error(err);
-      res.json({
+      res.status(500).json({
         success: false,
         message: err instanceof Error ? err.message : "Error",
         data: null,
@@ -34,7 +34,7 @@ class TodoController {
       });
     } catch (err) {
       console.error(err);
-      res.json({
+      res.status(500).json({
         success: false,
         message: err instanceof Error ? err.message : "Error",
         data: null,
@@ -54,7 +54,7 @@ class TodoController {
       });
     } catch (err) {
       console.error(err);
-      res.json({
+      res.status(500).json({
         success: false,
         message: err instanceof Error ? err.message : "Error",
         data: null,
@@ -74,7 +74,7 @@ class TodoController {
       });
     } catch (err) {
       console.error(err);
-      res.json({
+      res.status(500).json({
         success: false,
         message: err instanceof Error ? err.message : "Error",
         data: null,
@@ -94,7 +94,7 @@ class TodoController {
       });
     } catch (err) {
       console.error(err);
-      res.json({
+      res.status(500).json({
         success: false,
         message: err instanceof Error ? err.message : "Error",
         data: null,

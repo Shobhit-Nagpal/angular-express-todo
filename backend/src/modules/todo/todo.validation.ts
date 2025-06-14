@@ -18,7 +18,7 @@ export const validateTodo = async (
 
     next();
   } catch (err) {
-    res.json({
+    res.status(400).json({
       success: false,
       message: err instanceof Error ? err.message : "Error",
       data: null,
@@ -52,7 +52,7 @@ export const validateUpdateTodo = async (
 
     next();
   } catch (err) {
-    res.json({
+    res.status(400).json({
       success: false,
       message: err instanceof Error ? err.message : "Error",
       data: null,
@@ -74,7 +74,7 @@ export const validateDeleteTodo = async (
 
     next();
   } catch (err) {
-    res.json({
+    res.status(400).json({
       success: false,
       message: err instanceof Error ? err.message : "Error",
       data: null,

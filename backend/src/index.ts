@@ -1,6 +1,7 @@
 import express from "express";
 import { appRouter } from "./modules/routes";
 import db from "./modules/db";
+import cors from 'cors';
 
 const PORT = 3000;
 
@@ -10,6 +11,7 @@ process.on("SIGINT", () => gracefulShutdown("SIGINT"));
 process.on("SIGTERM", () => gracefulShutdown("SIGTERM"));
 
 app.use(express.json());
+app.use(cors());
 
 app.use("/api", appRouter);
 
